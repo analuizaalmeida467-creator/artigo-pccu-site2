@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,12 +6,12 @@
     <title>PCCU 2024: Análise Quantitativa e Psicossocial</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --text: #333;
+            --primary: #9c27b0;     /* ROXO - conscientização câncer ginecológico */
+            --secondary: #e91e63;   /* ROSA - saúde da mulher */
+            --accent: #673ab7;      /* LILÁS - prevenção */
+            --light: #f8bbd9;       /* ROSA CLARO */
+            --dark: #6a1b9a;        /* ROXO ESCURO */
+            --text: #4a148c;        /* ROXO TEXTOS */
         }
         
         * {
@@ -24,7 +24,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
             padding: 20px;
             min-height: 100vh;
         }
@@ -43,6 +43,7 @@
             color: white;
             padding: 3rem 2rem;
             text-align: center;
+            position: relative;
         }
         
         h1 {
@@ -55,6 +56,35 @@
             font-size: 1.3rem;
             opacity: 0.9;
             font-weight: 300;
+        }
+        
+        /* BOTÕES NO CABEÇALHO */
+        .header-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         .authors-section {
@@ -76,10 +106,12 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
+            border: 2px solid var(--light);
         }
         
         .author-card:hover {
             transform: translateY(-5px);
+            border-color: var(--secondary);
         }
         
         .content-section {
@@ -89,19 +121,19 @@
         .section {
             margin-bottom: 3rem;
             padding: 2rem;
-            background: var(--light);
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
             border-radius: 10px;
-            border-left: 5px solid var(--secondary);
+            border-left: 5px solid var(--primary);
         }
         
         h2 {
-            color: var(--primary);
+            color: var(--dark);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
         }
         
         h3 {
-            color: var(--secondary);
+            color: var(--primary);
             margin: 1.5rem 0 1rem 0;
         }
         
@@ -113,7 +145,7 @@
         }
         
         .keyword {
-            background: var(--secondary);
+            background: var(--primary);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 20px;
@@ -133,12 +165,13 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--light);
         }
         
         .highlight-value {
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--secondary);
+            color: var(--primary);
             margin-bottom: 0.5rem;
         }
         
@@ -159,16 +192,18 @@
             padding: 1rem;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--secondary);
         }
         
         .age-label {
             width: 100px;
             font-weight: 600;
+            color: var(--dark);
         }
         
         .age-bar-inner {
             height: 30px;
-            background: linear-gradient(90deg, var(--secondary), var(--accent));
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -188,15 +223,43 @@
             padding: 1rem;
             background: white;
             border-radius: 5px;
-            border-left: 3px solid var(--secondary);
+            border-left: 3px solid var(--primary);
         }
         
         footer {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
+        }
+        
+        /* BOTÕES NO RODAPÉ */
+        .footer-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .footer-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
@@ -204,6 +267,7 @@
             .subtitle { font-size: 1.1rem; }
             .content-section { padding: 2rem 1rem; }
             .authors-grid { grid-template-columns: 1fr; }
+            .header-buttons, .footer-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
@@ -212,10 +276,23 @@
         <header>
             <h1>Relação entre Comportamentos de Prevenção, Faixa Etária e Ocorrência de Alterações Citológicas no Exame PCCU</h1>
             <p class="subtitle">Uma Análise Quantitativa e Psicossocial</p>
+            
+            <!-- BOTÕES NO CABEÇALHO -->
+            <div class="header-buttons">
+                <a href="PESQUISA ESCRITA.docx" class="btn" download>
+                    Download do Artigo
+                </a>
+                <a href="DADOS PCCU 2024.xlsx" class="btn" download>
+                    Planilha de Dados
+                </a>
+                <a href="#resultados" class="btn">
+                    Ver Resultados
+                </a>
+            </div>
         </header>
 
         <section class="authors-section">
-            <h2>👥 Autores</h2>
+            <h2>Autores</h2>
             <div class="authors-grid">
                 <div class="author-card">
                     <h3>Ana Luiza Parente De Almeida</h3>
@@ -238,7 +315,7 @@
 
         <section class="content-section">
             <div class="section">
-                <h2>📋 Resumo</h2>
+                <h2>Resumo</h2>
                 <p>Este trabalho analisou resultados do exame preventivo do câncer de colo do útero (PCCU) coletados em 2024 em uma unidade de atenção em saúde da mulher, utilizada como campo de pesquisa, com o objetivo de compreender a relação entre a faixa etária e a ocorrência de alterações citológicas, bem como refletir sobre os fatores psicossociais que influenciam a adesão ao exame preventivo.</p>
                 
                 <p>A metodologia empregada integrou análise estatística dos dados (média, desvio padrão, proporção e intervalo de confiança) e pesquisa-ação, articulada à observação e compreensão dos fatores emocionais, culturais e comportamentais envolvidos no cuidado ginecológico.</p>
@@ -257,23 +334,8 @@
                 </div>
             </div>
 
-            <div class="section">
-                <h2>🎯 Introdução</h2>
-                <p>O exame preventivo do câncer de colo do útero é um importante recurso de rastreamento e detecção precoce de lesões cervicais, podendo prevenir a evolução para câncer invasivo. Apesar de sua disponibilidade e simplicidade técnica, muitas mulheres não realizam o exame de maneira regular, o que contribui para diagnósticos tardios e complicações graves.</p>
-                
-                <p>A não adesão ao PCCU envolve fatores emocionais, socioculturais e estruturais, como medo, vergonha, tabus associados ao corpo feminino, experiências negativas prévias e dificuldades de acesso ao serviço de saúde. Além disso, estudos indicam que a maior ocorrência de alterações citológicas se concentra entre mulheres na faixa etária de 30 a 45 anos, período associado à maior persistência de infecção pelo HPV, principal agente etiológico do câncer de colo uterino.</p>
-                
-                <h3>Pergunta Norteadora:</h3>
-                <div style="background: #e8f4fc; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary);">
-                    <strong>Qual a relação entre a adesão ao exame preventivo (PCCU) e a faixa etária na qual se concentra a maior ocorrência de alterações citológicas?</strong>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>🔬 Metodologia</h2>
-                <p>Trata-se de uma pesquisa de campo com abordagem quantitativa e qualitativa. A coleta de dados consistiu na extração de informações secundárias sobre idade, data da coleta e resultado citológico, sem qualquer dado de identificação pessoal. Os resultados foram classificados em negativos e alterados (LSIL, HSIL, ASC-H, AGC, CARCINOMA), sendo excluídos os exames classificados como insatisfatórios ou ASC-US.</p>
-                
-                <p>A análise estatística envolveu o cálculo de proporções, média, desvio padrão e intervalo de confiança de 95%. Paralelamente, adotou-se a pesquisa-ação, considerando a vivência do campo e as observações relacionadas a barreiras psicossociais, com o intuito de refletir sobre estratégias de acolhimento e educação em saúde.</p>
+            <div class="section" id="resultados">
+                <h2>Resultados Principais</h2>
                 
                 <div class="data-highlights">
                     <div class="highlight">
@@ -285,19 +347,15 @@
                         <div class="highlight-label">Idade Média</div>
                     </div>
                     <div class="highlight">
+                        <div class="highlight-value">32%</div>
+                        <div class="highlight-label">Alterações 35-44 anos</div>
+                    </div>
+                    <div class="highlight">
                         <div class="highlight-value">12</div>
                         <div class="highlight-label">Meses de Coleta</div>
                     </div>
-                    <div class="highlight">
-                        <div class="highlight-value">~10%</div>
-                        <div class="highlight-label">Taxa de Alterações</div>
-                    </div>
                 </div>
-            </div>
 
-            <div class="section">
-                <h2>📊 Resultados e Discussão</h2>
-                
                 <h3>Distribuição por Faixa Etária</h3>
                 <div class="age-distribution">
                     <div class="age-bar">
@@ -321,48 +379,35 @@
                         <div class="age-bar-inner" style="width: 20%">20%</div>
                     </div>
                 </div>
-                
-                <p>Como esperado, observa-se maior concentração de alterações citológicas na faixa de 35 a 44 anos, seguida pela faixa de 45 a 54 anos. Esses resultados corroboram a literatura que associa a persistência do HPV nessa fase da vida com maior risco de desenvolvimento de lesões cervicais.</p>
-                
-                <h3>Fatores Psicossociais Identificados</h3>
-                <ul style="list-style: none; padding: 1rem;">
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">😰 Sentimentos de vergonha e constrangimento durante o exame</li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">😨 Medo do resultado e possibilidade de diagnóstico de câncer</li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">😞 Experiências negativas prévias em consultas ginecológicas</li>
-                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee;">🤔 Falta de informação sobre a importância do exame preventivo</li>
-                    <li style="padding: 0.5rem 0;">🚫 Dificuldades de acesso aos serviços de saúde</li>
-                </ul>
             </div>
 
             <div class="section">
-                <h2>💡 Conclusão</h2>
+                <h2>Conclusão</h2>
                 <p>Este estudo permitiu identificar a relação entre a faixa etária e a ocorrência de alterações citológicas no exame PCCU, com maior concentração entre mulheres de 35 a 44 anos. Além disso, evidenciou a importância de considerar os fatores psicossociais que influenciam a adesão ao exame preventivo.</p>
                 
                 <h3>Recomendações</h3>
                 <div class="data-highlights">
                     <div class="highlight">
-                        <div class="highlight-value">🎓</div>
+                        <div class="highlight-value">Educação</div>
                         <div class="highlight-label">Campanhas educativas direcionadas</div>
                     </div>
                     <div class="highlight">
-                        <div class="highlight-value">🤝</div>
+                        <div class="highlight-value">Atendimento</div>
                         <div class="highlight-label">Atendimento humanizado</div>
                     </div>
                     <div class="highlight">
-                        <div class="highlight-value">🏥</div>
+                        <div class="highlight-value">Acesso</div>
                         <div class="highlight-label">Ampliação do acesso</div>
                     </div>
                     <div class="highlight">
-                        <div class="highlight-value">📢</div>
-                        <div class="highlight-label">Conscientização</div>
+                        <div class="highlight-value">Conscientização</div>
+                        <div class="highlight-label">Campanhas de conscientização</div>
                     </div>
                 </div>
-                
-                <p>Essas medidas podem contribuir significativamente para aumentar a adesão ao exame PCCU, permitindo o diagnóstico precoce e o tratamento oportuno de lesões cervicais, com impactos positivos na saúde e qualidade de vida das mulheres.</p>
             </div>
 
             <div class="section">
-                <h2>📚 Referências</h2>
+                <h2>Referências</h2>
                 <ul class="references">
                     <li>Arrossi, S. et al. (2024). Age-specific prevalence of cervical lesions and HPV persistence. International Journal of Gynecology & Obstetrics.</li>
                     <li>Bosch, F. X., & Muñoz, N. (2020). HPV and cervical cancer. Lancet Oncology.</li>
@@ -375,6 +420,16 @@
         </section>
 
         <footer>
+            <!-- BOTÕES NO RODAPÉ -->
+            <div class="footer-buttons">
+                <a href="PESQUISA ESCRITA.docx" class="footer-btn" download>
+                    Download do Artigo Completo
+                </a>
+                <a href="DADOS PCCU 2024.xlsx" class="footer-btn" download>
+                    Acessar Planilha de Dados
+                </a>
+            </div>
+            
             <p>© 2024 - Pesquisa sobre PCCU - Desenvolvido para fins acadêmicos</p>
             <p>Macapá - AP | Todos os direitos reservados</p>
         </footer>
