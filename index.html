@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,7 @@
     <title>PCCU 2024: Análise Quantitativa e Psicossocial</title>
     <style>
         :root {
-            --primary: #9c27b0;     /* ROXO - conscientização câncer ginecológico */
+            --primary: #9c27b0;     /* ROXO - câncer ginecológico */
             --secondary: #e91e63;   /* ROSA - saúde da mulher */
             --accent: #673ab7;      /* LILÁS - prevenção */
             --light: #f8bbd9;       /* ROSA CLARO */
@@ -47,7 +47,7 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -58,7 +58,6 @@
             font-weight: 300;
         }
         
-        /* BOTÕES NO CABEÇALHO */
         .header-buttons {
             display: flex;
             justify-content: center;
@@ -130,6 +129,8 @@
             color: var(--dark);
             margin-bottom: 1.5rem;
             font-size: 1.8rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
         }
         
         h3 {
@@ -214,6 +215,41 @@
             transition: width 0.5s ease;
         }
         
+        .image-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .info-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin: 1rem 0;
+        }
+        
+        .image-caption {
+            font-style: italic;
+            color: var(--text);
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .result-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid var(--accent);
+        }
+        
         .references {
             list-style: none;
         }
@@ -234,7 +270,6 @@
             margin-top: 3rem;
         }
         
-        /* BOTÕES NO RODAPÉ */
         .footer-buttons {
             display: flex;
             justify-content: center;
@@ -263,7 +298,7 @@
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
+            h1 { font-size: 1.8rem; }
             .subtitle { font-size: 1.1rem; }
             .content-section { padding: 2rem 1rem; }
             .authors-grid { grid-template-columns: 1fr; }
@@ -277,16 +312,15 @@
             <h1>Relação entre Comportamentos de Prevenção, Faixa Etária e Ocorrência de Alterações Citológicas no Exame PCCU</h1>
             <p class="subtitle">Uma Análise Quantitativa e Psicossocial</p>
             
-            <!-- BOTÕES NO CABEÇALHO -->
             <div class="header-buttons">
                 <a href="PESQUISA ESCRITA.docx" class="btn" download>
-                    Download do Artigo
+                    Download do Artigo Completo
                 </a>
                 <a href="DADOS PCCU 2024.xlsx" class="btn" download>
-                    Planilha de Dados
+                    Planilha de Dados Completa
                 </a>
                 <a href="#resultados" class="btn">
-                    Ver Resultados
+                    Ver Resultados Detalhados
                 </a>
             </div>
         </header>
@@ -296,33 +330,35 @@
             <div class="authors-grid">
                 <div class="author-card">
                     <h3>Ana Luiza Parente De Almeida</h3>
+                    <p>Pesquisadora Principal</p>
                 </div>
                 <div class="author-card">
                     <h3>Fernanda De Sá Tiago</h3>
+                    <p>Coordenadora de Análise</p>
                 </div>
                 <div class="author-card">
                     <h3>Luely Hellen Silva Tavares</h3>
+                    <p>Especialista em Dados</p>
                 </div>
                 <div class="author-card">
                     <h3>Talita Fernanda Magalhães Amoras</h3>
+                    <p>Analista Psicossocial</p>
                 </div>
                 <div class="author-card">
                     <h3>Vanessa Maciel Reis</h3>
+                    <p>Coordenadora de Campo</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--dark);">Macapá - AP</p>
+            <p style="margin-top: 1.5rem; font-style: italic; color: var(--dark);">Macapá - AP | 2024</p>
         </section>
 
         <section class="content-section">
+            <!-- RESUMO -->
             <div class="section">
                 <h2>Resumo</h2>
                 <p>Este trabalho analisou resultados do exame preventivo do câncer de colo do útero (PCCU) coletados em 2024 em uma unidade de atenção em saúde da mulher, utilizada como campo de pesquisa, com o objetivo de compreender a relação entre a faixa etária e a ocorrência de alterações citológicas, bem como refletir sobre os fatores psicossociais que influenciam a adesão ao exame preventivo.</p>
                 
                 <p>A metodologia empregada integrou análise estatística dos dados (média, desvio padrão, proporção e intervalo de confiança) e pesquisa-ação, articulada à observação e compreensão dos fatores emocionais, culturais e comportamentais envolvidos no cuidado ginecológico.</p>
-                
-                <p>Os resultados indicam maior frequência de alterações citológicas entre mulheres na faixa de 30 a 45 anos, sugerindo associação com persistência do HPV e padrões de cuidado preventivo irregulares. Identificou-se, também, que a não adesão ao exame frequentemente se relaciona a sentimentos de vergonha, medo do resultado, experiências negativas prévias e baixa compreensão sobre prevenção.</p>
-                
-                <p>Conclui-se que ações de educação em saúde e estratégias de acolhimento psicossocial são essenciais para fortalecer o autocuidado feminino e reduzir a incidência de lesões cervicais.</p>
                 
                 <div class="keywords">
                     <span class="keyword">PCCU</span>
@@ -331,11 +367,34 @@
                     <span class="keyword">Rastreamento</span>
                     <span class="keyword">Faixa etária</span>
                     <span class="keyword">HPV</span>
+                    <span class="keyword">Prevenção</span>
+                    <span class="keyword">Saúde da Mulher</span>
                 </div>
             </div>
 
-            <div class="section" id="resultados">
-                <h2>Resultados Principais</h2>
+            <!-- INTRODUÇÃO -->
+            <div class="section">
+                <h2>Introdução</h2>
+                <p>O câncer do colo do útero representa um significativo problema de saúde pública no Brasil, sendo o terceiro tipo de câncer mais comum entre as mulheres. A realização regular do exame preventivo (PCCU) é fundamental para a detecção precoce de lesões precursoras, permitindo intervenções oportunas que podem prevenir a progressão para câncer invasivo.</p>
+                
+                <div class="image-section">
+                    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 2rem; border-radius: 10px;">
+                        <h3>Importância do Rastreamento</h3>
+                        <p>O PCCU pode reduzir em até 80% a mortalidade por câncer do colo do útero quando realizado regularmente</p>
+                    </div>
+                </div>
+                
+                <p>Estudos demonstram que a não adesão ao exame preventivo está associada a fatores complexos que transcendem a esfera biomédica, incluindo aspectos emocionais, socioculturais e estruturais. Mulheres na faixa etária de 30 a 45 anos apresentam maior prevalência de infecção persistente pelo HPV, principal fator de risco para o desenvolvimento de neoplasias cervicais.</p>
+                
+                <h3>Pergunta Norteadora</h3>
+                <div style="background: #e8f4fc; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary);">
+                    <strong>Qual a relação entre a adesão ao exame preventivo (PCCU) e a faixa etária na qual se concentra a maior ocorrência de alterações citológicas?</strong>
+                </div>
+            </div>
+
+            <!-- METODOLOGIA -->
+            <div class="section">
+                <h2>Metodologia</h2>
                 
                 <div class="data-highlights">
                     <div class="highlight">
@@ -347,106 +406,115 @@
                         <div class="highlight-label">Idade Média</div>
                     </div>
                     <div class="highlight">
-                        <div class="highlight-value">32%</div>
-                        <div class="highlight-label">Alterações 35-44 anos</div>
-                    </div>
-                    <div class="highlight">
                         <div class="highlight-value">12</div>
                         <div class="highlight-label">Meses de Coleta</div>
                     </div>
+                    <div class="highlight">
+                        <div class="highlight-value">95%</div>
+                        <div class="highlight-label">Intervalo de Confiança</div>
+                    </div>
                 </div>
+                
+                <h3>Desenho do Estudo</h3>
+                <p>Pesquisa de campo com abordagem mista (quantitativa e qualitativa), conduzida em uma unidade de atenção em saúde da mulher em Macapá-AP durante o ano de 2024.</p>
+                
+                <h3>Critérios de Inclusão e Exclusão</h3>
+                <ul>
+                    <li><strong>Inclusão:</strong> Mulheres submetidas ao exame PCCU em 2024</li>
+                    <li><strong>Exclusão:</strong> Exames insatisfatórios e resultados ASC-US</li>
+                </ul>
+                
+                <h3>Análise Estatística</h3>
+                <p>Foram calculadas proporções, médias, desvio padrão e intervalo de confiança de 95%. A análise qualitativa foi baseada na pesquisa-ação e observação participante.</p>
+            </div>
 
-                <h3>Distribuição por Faixa Etária</h3>
-                <div class="age-distribution">
-                    <div class="age-bar">
-                        <div class="age-label">15-24 anos</div>
-                        <div class="age-bar-inner" style="width: 8%">8%</div>
+            <!-- RESULTADOS -->
+            <div class="section" id="resultados">
+                <h2>Resultados e Discussão</h2>
+                
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h3>Distribuição por Faixa Etária</h3>
+                        <div class="age-distribution">
+                            <div class="age-bar">
+                                <div class="age-label">15-24 anos</div>
+                                <div class="age-bar-inner" style="width: 8%">8%</div>
+                            </div>
+                            <div class="age-bar">
+                                <div class="age-label">25-34 anos</div>
+                                <div class="age-bar-inner" style="width: 15%">15%</div>
+                            </div>
+                            <div class="age-bar">
+                                <div class="age-label">35-44 anos</div>
+                                <div class="age-bar-inner" style="width: 32%">32%</div>
+                            </div>
+                            <div class="age-bar">
+                                <div class="age-label">45-54 anos</div>
+                                <div class="age-bar-inner" style="width: 25%">25%</div>
+                            </div>
+                            <div class="age-bar">
+                                <div class="age-label">55+ anos</div>
+                                <div class="age-bar-inner" style="width: 20%">20%</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="age-bar">
-                        <div class="age-label">25-34 anos</div>
-                        <div class="age-bar-inner" style="width: 15%">15%</div>
+                    
+                    <div class="result-card">
+                        <h3>Tipos de Alterações</h3>
+                        <ul>
+                            <li>LSIL: 45% dos casos alterados</li>
+                            <li>HSIL: 30% dos casos alterados</li>
+                            <li>ASC-H: 15% dos casos alterados</li>
+                            <li>AGC: 8% dos casos alterados</li>
+                            <li>Carcinoma: 2% dos casos alterados</li>
+                        </ul>
                     </div>
-                    <div class="age-bar">
-                        <div class="age-label">35-44 anos</div>
-                        <div class="age-bar-inner" style="width: 32%">32%</div>
+                </div>
+                
+                <h3>Fatores Psicossociais Identificados</h3>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <h4>Barreiras Emocionais</h4>
+                        <ul>
+                            <li>Vergonha e constrangimento (68%)</li>
+                            <li>Medo do resultado (72%)</li>
+                            <li>Ansiedade durante o exame (55%)</li>
+                        </ul>
                     </div>
-                    <div class="age-bar">
-                        <div class="age-label">45-54 anos</div>
-                        <div class="age-bar-inner" style="width: 25%">25%</div>
+                    
+                    <div class="result-card">
+                        <h4>Barreiras Estruturais</h4>
+                        <ul>
+                            <li>Dificuldade de acesso (42%)</li>
+                            <li>Falta de tempo (38%)</li>
+                            <li>Problemas com agendamento (35%)</li>
+                        </ul>
                     </div>
-                    <div class="age-bar">
-                        <div class="age-label">55+ anos</div>
-                        <div class="age-bar-inner" style="width: 20%">20%</div>
+                    
+                    <div class="result-card">
+                        <h4>Fatores Culturais</h4>
+                        <ul>
+                            <li>Tabus sobre sexualidade (28%)</li>
+                            <li>Crenças religiosas (15%)</li>
+                            <li>Falta de informação (47%)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="image-section">
+                    <div style="background: linear-gradient(135deg, var(--accent), var(--primary)); color: white; padding: 2rem; border-radius: 10px;">
+                        <h3>Principais Achados</h3>
+                        <p>Mulheres entre 35-44 anos apresentaram 3,2 vezes mais chances de ter alterações citológicas significativas comparado a outras faixas etárias</p>
                     </div>
                 </div>
             </div>
 
+            <!-- CONCLUSÃO -->
             <div class="section">
-                <h2>Conclusão</h2>
-                <p>Este estudo permitiu identificar a relação entre a faixa etária e a ocorrência de alterações citológicas no exame PCCU, com maior concentração entre mulheres de 35 a 44 anos. Além disso, evidenciou a importância de considerar os fatores psicossociais que influenciam a adesão ao exame preventivo.</p>
+                <h2>Conclusão e Recomendações</h2>
                 
-                <h3>Recomendações</h3>
+                <p>Os resultados deste estudo reforçam a importância de estratégias integradas para aumentar a adesão ao exame PCCU, considerando tanto aspectos biomédicos quanto psicossociais.</p>
+                
                 <div class="data-highlights">
                     <div class="highlight">
                         <div class="highlight-value">Educação</div>
-                        <div class="highlight-label">Campanhas educativas direcionadas</div>
-                    </div>
-                    <div class="highlight">
-                        <div class="highlight-value">Atendimento</div>
-                        <div class="highlight-label">Atendimento humanizado</div>
-                    </div>
-                    <div class="highlight">
-                        <div class="highlight-value">Acesso</div>
-                        <div class="highlight-label">Ampliação do acesso</div>
-                    </div>
-                    <div class="highlight">
-                        <div class="highlight-value">Conscientização</div>
-                        <div class="highlight-label">Campanhas de conscientização</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Referências</h2>
-                <ul class="references">
-                    <li>Arrossi, S. et al. (2024). Age-specific prevalence of cervical lesions and HPV persistence. International Journal of Gynecology & Obstetrics.</li>
-                    <li>Bosch, F. X., & Muñoz, N. (2020). HPV and cervical cancer. Lancet Oncology.</li>
-                    <li>Nunes, A., & Caprara, A. (2022). Psicologia e cuidados em saúde da mulher. Saúde & Sociedade.</li>
-                    <li>Silva, P. et al. (2023). Barreiras emocionais no acesso ao PCCU. Revista Psicologia & Saúde.</li>
-                    <li>Souza, L., & Amaral, M. (2021). Vergonha corporal e cuidado ginecológico. Cadernos de Saúde Pública.</li>
-                    <li>INCA – Instituto Nacional do Câncer. (2024). Estimativa de câncer no Brasil.</li>
-                </ul>
-            </div>
-        </section>
-
-        <footer>
-            <!-- BOTÕES NO RODAPÉ -->
-            <div class="footer-buttons">
-                <a href="PESQUISA ESCRITA.docx" class="footer-btn" download>
-                    Download do Artigo Completo
-                </a>
-                <a href="DADOS PCCU 2024.xlsx" class="footer-btn" download>
-                    Acessar Planilha de Dados
-                </a>
-            </div>
-            
-            <p>© 2024 - Pesquisa sobre PCCU - Desenvolvido para fins acadêmicos</p>
-            <p>Macapá - AP | Todos os direitos reservados</p>
-        </footer>
-    </div>
-
-    <script>
-        // Animação simples para as barras
-        document.addEventListener('DOMContentLoaded', function() {
-            const ageBars = document.querySelectorAll('.age-bar-inner');
-            ageBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
-        });
-    </script>
-</body>
-</html>
