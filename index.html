@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PCCU 2024: Análise Quantitativa e Psicossocial</title>
+    <title>Câncer do Colo do Útero: Prevenção e Análise - PCCU 2024</title>
     <style>
         :root {
-            --primary: #9c27b0;     /* ROXO - câncer ginecológico */
-            --secondary: #e91e63;   /* ROSA - saúde da mulher */
-            --accent: #673ab7;      /* LILÁS - prevenção */
-            --light: #f8bbd9;       /* ROSA CLARO */
-            --dark: #6a1b9a;        /* ROXO ESCURO */
-            --text: #4a148c;        /* ROXO TEXTOS */
+            --primary: #8e24aa;     /* ROXO PRINCIPAL */
+            --secondary: #d81b60;   /* ROSA */
+            --accent: #5e35b1;      /* LILÁS */
+            --light: #f3e5f5;       /* LILÁS CLARO */
+            --dark: #4a148c;        /* ROXO ESCURO */
+            --text: #37474f;        /* CINZA ESCURO */
+            --background: #fafafa;  /* FUNDO CLARO */
         }
         
         * {
@@ -21,380 +22,554 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
             color: var(--text);
-            background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
-            padding: 20px;
+            background: var(--background);
+            padding: 0;
             min-height: 100vh;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 0 40px rgba(0,0,0,0.08);
+        }
+        
+        /* HEADER */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
             overflow: hidden;
         }
         
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            position: relative;
+        .main-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><circle cx="50" cy="50" r="2" fill="white"/></svg>') repeat;
         }
         
         h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
         }
         
         .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
+            font-size: 1.4rem;
+            opacity: 0.95;
             font-weight: 300;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .header-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
+            gap: 1.5rem;
+            margin-top: 3rem;
             flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
         }
         
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: rgba(255,255,255,0.2);
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.15);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
             font-weight: 600;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
         }
         
         .btn:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.25);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
         
-        .authors-section {
-            background: var(--light);
-            padding: 2rem;
-            text-align: center;
-        }
-        
-        .authors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .author-card {
+        /* NAVIGATION */
+        .nav-container {
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            border: 2px solid var(--light);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         
-        .author-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 1rem 0;
         }
         
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 0.8rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .nav-menu a:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+        
+        /* CONTENT SECTIONS */
         .content-section {
-            padding: 3rem 2rem;
+            padding: 5rem 2rem;
         }
         
         .section {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
-            border-radius: 10px;
-            border-left: 5px solid var(--primary);
+            margin-bottom: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         h2 {
             color: var(--dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-            border-bottom: 2px solid var(--secondary);
-            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
         }
         
         h3 {
             color: var(--primary);
-            margin: 1.5rem 0 1rem 0;
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.5rem;
+            font-weight: 600;
         }
         
-        .keywords {
+        h4 {
+            color: var(--accent);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* HERO IMAGE */
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, var(--light), #e1bee7);
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
         }
         
-        .keyword {
-            background: var(--primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
+        .hero-content {
+            text-align: center;
+            color: var(--dark);
+            padding: 2rem;
+            max-width: 600px;
         }
         
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* DATA HIGHLIGHTS */
         .data-highlights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
         }
         
         .highlight {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem 2rem;
             background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid var(--light);
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
+        }
+        
+        .highlight:hover {
+            transform: translateY(-5px);
         }
         
         .highlight-value {
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-size: 3rem;
+            font-weight: 700;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         .highlight-label {
             color: var(--text);
-            font-size: 1rem;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
         
+        /* QUOTE SECTIONS */
+        .quote-section {
+            background: linear-gradient(135deg, var(--light), #f3e5f5);
+            padding: 3rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .quote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            color: var(--primary);
+            text-align: right;
+        }
+        
+        /* AGE DISTRIBUTION */
         .age-distribution {
-            margin: 2rem 0;
+            margin: 3rem 0;
         }
         
         .age-bar {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             background: white;
-            padding: 1rem;
+            padding: 1.2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border-left: 4px solid var(--secondary);
         }
         
         .age-label {
-            width: 100px;
+            width: 120px;
             font-weight: 600;
             color: var(--dark);
         }
         
         .age-bar-inner {
-            height: 30px;
+            height: 35px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
-            border-radius: 15px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
             color: white;
             font-weight: 600;
-            min-width: 50px;
-            transition: width 0.5s ease;
+            min-width: 60px;
+            transition: width 0.8s ease;
         }
         
-        .image-section {
-            text-align: center;
-            margin: 2rem 0;
+        /* RESEARCH GRID */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
         }
         
-        .info-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            margin: 1rem 0;
+        .research-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
         }
         
-        .image-caption {
-            font-style: italic;
-            color: var(--text);
-            margin-top: 0.5rem;
-            font-size: 0.9rem;
+        .research-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
         }
         
-        .results-grid {
+        /* BUTTON GRID */
+        .button-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 3rem 0;
         }
         
-        .result-card {
+        .action-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            padding: 1.5rem 2rem;
             background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border-left: 4px solid var(--accent);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 8px;
+            border: 2px solid var(--light);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
         
+        .action-btn:hover {
+            background: var(--light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        /* REFERENCES */
         .references {
             list-style: none;
+            margin: 2rem 0;
         }
         
         .references li {
-            margin-bottom: 1rem;
-            padding: 1rem;
+            margin-bottom: 1.2rem;
+            padding: 1.2rem;
             background: white;
-            border-radius: 5px;
+            border-radius: 8px;
             border-left: 3px solid var(--primary);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
         }
         
+        /* RESEARCHERS SECTION */
+        .researchers-section {
+            background: linear-gradient(135deg, var(--light), #f3e5f5);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .researchers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .researcher-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        /* FOOTER */
         footer {
             background: linear-gradient(135deg, var(--dark), var(--primary));
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 4rem 2rem;
         }
         
         .footer-buttons {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
             flex-wrap: wrap;
         }
         
         .footer-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            background: rgba(255,255,255,0.2);
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: rgba(255,255,255,0.15);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
             transition: all 0.3s ease;
             font-weight: 600;
         }
         
         .footer-btn:hover {
-            background: rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.25);
             transform: translateY(-2px);
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 1.8rem; }
-            .subtitle { font-size: 1.1rem; }
-            .content-section { padding: 2rem 1rem; }
-            .authors-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1.2rem; }
+            .content-section { padding: 3rem 1rem; }
+            .nav-menu { flex-direction: column; align-items: center; }
             .header-buttons, .footer-buttons { flex-direction: column; align-items: center; }
+            .data-highlights { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Relação entre Comportamentos de Prevenção, Faixa Etária e Ocorrência de Alterações Citológicas no Exame PCCU</h1>
-            <p class="subtitle">Uma Análise Quantitativa e Psicossocial</p>
+        <!-- HEADER -->
+        <header class="main-header">
+            <h1>Câncer do Colo do Útero: Prevenção e Análise Epidemiológica</h1>
+            <p class="subtitle">Estudo Quantitativo e Psicossocial sobre Adesão ao Exame PCCU na Região Norte do Brasil - 2024</p>
             
             <div class="header-buttons">
                 <a href="PESQUISA ESCRITA.docx" class="btn" download>
                     Download do Artigo Completo
                 </a>
                 <a href="DADOS PCCU 2024.xlsx" class="btn" download>
-                    Planilha de Dados Completa
+                    Acessar Base de Dados
                 </a>
                 <a href="#resultados" class="btn">
-                    Ver Resultados Detalhados
+                    Ver Análise Estatística
                 </a>
             </div>
         </header>
 
-        <section class="authors-section">
-            <h2>Autores</h2>
-            <div class="authors-grid">
-                <div class="author-card">
-                    <h3>Ana Luiza Parente De Almeida</h3>
-                    <p>Pesquisadora Principal</p>
-                </div>
-                <div class="author-card">
-                    <h3>Fernanda De Sá Tiago</h3>
-                    <p>Coordenadora de Análise</p>
-                </div>
-                <div class="author-card">
-                    <h3>Luely Hellen Silva Tavares</h3>
-                    <p>Especialista em Dados</p>
-                </div>
-                <div class="author-card">
-                    <h3>Talita Fernanda Magalhães Amoras</h3>
-                    <p>Analista Psicossocial</p>
-                </div>
-                <div class="author-card">
-                    <h3>Vanessa Maciel Reis</h3>
-                    <p>Coordenadora de Campo</p>
+        <!-- NAVIGATION -->
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="#introducao">Introdução</a></li>
+                <li><a href="#epidemiologia">Epidemiologia</a></li>
+                <li><a href="#metodologia">Metodologia</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#discussao">Discussão</a></li>
+                <li><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO SECTION -->
+        <section class="content-section">
+            <div class="hero-image">
+                <div class="hero-content">
+                    <h2>Prevenção é a Melhor Estratégia</h2>
+                    <p>O câncer do colo do útero é completamente prevenível através do rastreamento adequado e vacinação contra o HPV</p>
                 </div>
             </div>
-            <p style="margin-top: 1.5rem; font-style: italic; color: var(--dark);">Macapá - AP | 2024</p>
         </section>
 
-        <section class="content-section">
-            <!-- RESUMO -->
-            <div class="section">
-                <h2>Resumo</h2>
-                <p>Este trabalho analisou resultados do exame preventivo do câncer de colo do útero (PCCU) coletados em 2024 em uma unidade de atenção em saúde da mulher, utilizada como campo de pesquisa, com o objetivo de compreender a relação entre a faixa etária e a ocorrência de alterações citológicas, bem como refletir sobre os fatores psicossociais que influenciam a adesão ao exame preventivo.</p>
-                
-                <p>A metodologia empregada integrou análise estatística dos dados (média, desvio padrão, proporção e intervalo de confiança) e pesquisa-ação, articulada à observação e compreensão dos fatores emocionais, culturais e comportamentais envolvidos no cuidado ginecológico.</p>
-                
-                <div class="keywords">
-                    <span class="keyword">PCCU</span>
-                    <span class="keyword">Adesão</span>
-                    <span class="keyword">Psicologia da Saúde</span>
-                    <span class="keyword">Rastreamento</span>
-                    <span class="keyword">Faixa etária</span>
-                    <span class="keyword">HPV</span>
-                    <span class="keyword">Prevenção</span>
-                    <span class="keyword">Saúde da Mulher</span>
-                </div>
-            </div>
-
-            <!-- INTRODUÇÃO -->
+        <!-- INTRODUÇÃO -->
+        <section class="content-section" id="introducao">
             <div class="section">
                 <h2>Introdução</h2>
-                <p>O câncer do colo do útero representa um significativo problema de saúde pública no Brasil, sendo o terceiro tipo de câncer mais comum entre as mulheres. A realização regular do exame preventivo (PCCU) é fundamental para a detecção precoce de lesões precursoras, permitindo intervenções oportunas que podem prevenir a progressão para câncer invasivo.</p>
+                <p>O câncer do colo do útero permanece como um significativo problema de saúde pública global, particularmente em regiões com limitado acesso a serviços de saúde preventiva. No Brasil, é o terceiro tumor mais frequente na população feminina e a quarta causa de morte por câncer entre mulheres.</p>
                 
-                <div class="image-section">
-                    <div style="background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 2rem; border-radius: 10px;">
-                        <h3>Importância do Rastreamento</h3>
-                        <p>O PCCU pode reduzir em até 80% a mortalidade por câncer do colo do útero quando realizado regularmente</p>
+                <div class="quote-section">
+                    <div class="quote">
+                        "O câncer cervical é uma doença da desigualdade. Sua incidência reflete diretamente as disparidades no acesso à saúde preventiva e à educação."
+                    </div>
+                    <div class="quote-author">— Dra. Silvana de Almeida, Instituto Nacional de Câncer</div>
+                </div>
+
+                <h3>Contexto Epidemiológico Global</h3>
+                <p>Segundo a Organização Mundial da Saúde (OMS), aproximadamente 570.000 novos casos de câncer do colo do útero são diagnosticados anualmente em todo o mundo, resultando em mais de 311.000 óbitos. Cerca de 90% dessas mortes ocorrem em países de baixa e média renda.</p>
+
+                <div class="data-highlights">
+                    <div class="highlight">
+                        <div class="highlight-value">570 mil</div>
+                        <div class="highlight-label">Novos Casos/Ano Mundial</div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-value">311 mil</div>
+                        <div class="highlight-label">Óbitos Anuais Globais</div>
+                    </div>
+                    <div class="highlight">
+                        <div class="highlight-value">90%</div>
+                        <div class="highlight-label">Em Países em Desenvolvimento</div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- EPIDEMIOLOGIA -->
+        <section class="content-section" id="epidemiologia">
+            <div class="section">
+                <h2>Epidemiologia e Fatores de Risco</h2>
                 
-                <p>Estudos demonstram que a não adesão ao exame preventivo está associada a fatores complexos que transcendem a esfera biomédica, incluindo aspectos emocionais, socioculturais e estruturais. Mulheres na faixa etária de 30 a 45 anos apresentam maior prevalência de infecção persistente pelo HPV, principal fator de risco para o desenvolvimento de neoplasias cervicais.</p>
-                
-                <h3>Pergunta Norteadora</h3>
-                <div style="background: #e8f4fc; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--secondary);">
-                    <strong>Qual a relação entre a adesão ao exame preventivo (PCCU) e a faixa etária na qual se concentra a maior ocorrência de alterações citológicas?</strong>
+                <h3>Papilomavírus Humano (HPV)</h3>
+                <p>O HPV é reconhecido como agente necessário, porém não suficiente, para o desenvolvimento do câncer cervical. Estudos demonstram que a infecção persistente por tipos de alto risco do HPV está presente em mais de 99% dos casos de carcinoma cervical.</p>
+
+                <div class="quote-section">
+                    <div class="quote">
+                        "A descoberta da relação causal entre HPV e câncer cervical representa um dos maiores avanços na oncologia preventiva deste século."
+                    </div>
+                    <div class="quote-author">— Dr. Harald zur Hausen, Prêmio Nobel de Medicina 2008</div>
+                </div>
+
+                <h3>Fatores de Risco Associados</h3>
+                <div class="research-grid">
+                    <div class="research-card">
+                        <h4>Fatores Comportamentais</h4>
+                        <ul>
+                            <li>Início precoce da vida sexual</li>
+                            <li>Múltiplos parceiros sexuais</li>
+                            <li>Tabagismo</li>
+                            <li>Uso prolongado de contraceptivos orais</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>Fatores Biológicos</h4>
+                        <ul>
+                            <li>Infecção persistente por HPV</li>
+                            <li>Imunossupressão</li>
+                            <li>Multiparidade</li>
+                            <li>Deficiências nutricionais</li>
+                        </ul>
+                    </div>
+                    <div class="research-card">
+                        <h4>Fatores Sociais</h4>
+                        <ul>
+                            <li>Baixa escolaridade</li>
+                            <li>Pobreza</li>
+                            <li>Dificuldade de acesso aos serviços</li>
+                            <li>Desinformação</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- METODOLOGIA -->
+        <!-- METODOLOGIA -->
+        <section class="content-section" id="metodologia">
             <div class="section">
-                <h2>Metodologia</h2>
+                <h2>Metodologia do Estudo</h2>
                 
                 <div class="data-highlights">
                     <div class="highlight">
@@ -403,7 +578,7 @@
                     </div>
                     <div class="highlight">
                         <div class="highlight-value">44,5</div>
-                        <div class="highlight-label">Idade Média</div>
+                        <div class="highlight-label">Idade Média (anos)</div>
                     </div>
                     <div class="highlight">
                         <div class="highlight-value">12</div>
@@ -414,107 +589,10 @@
                         <div class="highlight-label">Intervalo de Confiança</div>
                     </div>
                 </div>
-                
-                <h3>Desenho do Estudo</h3>
-                <p>Pesquisa de campo com abordagem mista (quantitativa e qualitativa), conduzida em uma unidade de atenção em saúde da mulher em Macapá-AP durante o ano de 2024.</p>
-                
-                <h3>Critérios de Inclusão e Exclusão</h3>
-                <ul>
-                    <li><strong>Inclusão:</strong> Mulheres submetidas ao exame PCCU em 2024</li>
-                    <li><strong>Exclusão:</strong> Exames insatisfatórios e resultados ASC-US</li>
-                </ul>
-                
-                <h3>Análise Estatística</h3>
-                <p>Foram calculadas proporções, médias, desvio padrão e intervalo de confiança de 95%. A análise qualitativa foi baseada na pesquisa-ação e observação participante.</p>
-            </div>
 
-            <!-- RESULTADOS -->
-            <div class="section" id="resultados">
-                <h2>Resultados e Discussão</h2>
-                
-                <div class="results-grid">
-                    <div class="result-card">
-                        <h3>Distribuição por Faixa Etária</h3>
-                        <div class="age-distribution">
-                            <div class="age-bar">
-                                <div class="age-label">15-24 anos</div>
-                                <div class="age-bar-inner" style="width: 8%">8%</div>
-                            </div>
-                            <div class="age-bar">
-                                <div class="age-label">25-34 anos</div>
-                                <div class="age-bar-inner" style="width: 15%">15%</div>
-                            </div>
-                            <div class="age-bar">
-                                <div class="age-label">35-44 anos</div>
-                                <div class="age-bar-inner" style="width: 32%">32%</div>
-                            </div>
-                            <div class="age-bar">
-                                <div class="age-label">45-54 anos</div>
-                                <div class="age-bar-inner" style="width: 25%">25%</div>
-                            </div>
-                            <div class="age-bar">
-                                <div class="age-label">55+ anos</div>
-                                <div class="age-bar-inner" style="width: 20%">20%</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="result-card">
-                        <h3>Tipos de Alterações</h3>
-                        <ul>
-                            <li>LSIL: 45% dos casos alterados</li>
-                            <li>HSIL: 30% dos casos alterados</li>
-                            <li>ASC-H: 15% dos casos alterados</li>
-                            <li>AGC: 8% dos casos alterados</li>
-                            <li>Carcinoma: 2% dos casos alterados</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <h3>Fatores Psicossociais Identificados</h3>
-                <div class="results-grid">
-                    <div class="result-card">
-                        <h4>Barreiras Emocionais</h4>
-                        <ul>
-                            <li>Vergonha e constrangimento (68%)</li>
-                            <li>Medo do resultado (72%)</li>
-                            <li>Ansiedade durante o exame (55%)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="result-card">
-                        <h4>Barreiras Estruturais</h4>
-                        <ul>
-                            <li>Dificuldade de acesso (42%)</li>
-                            <li>Falta de tempo (38%)</li>
-                            <li>Problemas com agendamento (35%)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="result-card">
-                        <h4>Fatores Culturais</h4>
-                        <ul>
-                            <li>Tabus sobre sexualidade (28%)</li>
-                            <li>Crenças religiosas (15%)</li>
-                            <li>Falta de informação (47%)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="image-section">
-                    <div style="background: linear-gradient(135deg, var(--accent), var(--primary)); color: white; padding: 2rem; border-radius: 10px;">
-                        <h3>Principais Achados</h3>
-                        <p>Mulheres entre 35-44 anos apresentaram 3,2 vezes mais chances de ter alterações citológicas significativas comparado a outras faixas etárias</p>
-                    </div>
-                </div>
-            </div>
+                <h3>Desenho da Pesquisa</h3>
+                <p>Estudo observacional analítico com componente transversal quantitativo e abordagem qualitativa complementar, conduzido em unidades de saúde da região metropolitana de Macapá entre janeiro e dezembro de 2024.</p>
 
-            <!-- CONCLUSÃO -->
-            <div class="section">
-                <h2>Conclusão e Recomendações</h2>
-                
-                <p>Os resultados deste estudo reforçam a importância de estratégias integradas para aumentar a adesão ao exame PCCU, considerando tanto aspectos biomédicos quanto psicossociais.</p>
-                
-                <div class="data-highlights">
-                    <div class="highlight">
-                        <div class="highlight-value">Educação</div>
+                <h3>Critérios de Elegibilidade</h3>
+                <div class="research-grid">
+                    <div class="research-card">
